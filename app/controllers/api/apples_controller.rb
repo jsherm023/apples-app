@@ -32,4 +32,10 @@ class Api::ApplesController < ApplicationController
       )
     render "show.json.jbuilder"
   end
+
+  def destroy
+    @apple = Apple.find_by(id:params[:id])
+    @apple.destroy
+    render json: {message: "Apple has been successfully removed!"}
+  end
 end
