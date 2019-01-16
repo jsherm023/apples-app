@@ -20,4 +20,16 @@ class Api::ApplesController < ApplicationController
     @apple = Apple.find_by(id:params[:id])
     render "show.json.jbuilder"
   end
+
+  def update
+    @apple = Apple.find_by(id:params[:id])
+    @apple.update(
+      variety: params[:variety],
+      color: params[:color],
+      price: params[:price],
+      origin: params[:origin],
+      flavor: params[:flavor]
+      )
+    render "show.json.jbuilder"
+  end
 end

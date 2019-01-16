@@ -3,5 +3,6 @@ Rails.application.routes.draw do
     get '/apples' => 'apples#index'
     post '/apples' => 'apples#create'
     get '/apples/:id' => 'apples#show'
+    patch '/apples/:id' => 'apples#update'
   end
 end
