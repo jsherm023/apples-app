@@ -15,4 +15,9 @@ class Api::ApplesController < ApplicationController
     @apple.save
     render "show.json.jbuilder"
   end
+
+  def show
+    @apple = Apple.find_by(id:params[:id])
+    render "show.json.jbuilder"
+  end
 end
